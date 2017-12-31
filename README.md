@@ -1,6 +1,6 @@
 # kabali
 
-<img src='https://raw.githubusercontent.com/vijayaraj210/kabali/master/kabali-logo.png'/>
+<img src='https://raw.githubusercontent.com/vijayrc/kabali/master/kabali-logo.png'/>
 
 ## Problem
 - *Given* big data jobs have widely varying business needs
