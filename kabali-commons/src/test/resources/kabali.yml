@@ -1,0 +1,19 @@
+job: SampleJob
+colocateKey: purposedData.petoriaCredit.header.ID[0].EntityKey
+scoreKey: "select p.final_score from sampler p"
+expectedMean: 800
+expectedDeviation: 800
+expectedVariance: 100
+expectedSkewness: 0.6
+tolerance: 0.1
+sampleSize: 1000
+stratas:
+  - name: males
+    fraction: 0.5
+    sql: "SELECT p.purposedData.petoriaCredit.header.ID[0].EntityKey FROM samplable p WHERE p.purposedData.petoriaCredit.header.ID[0].Gender = 'M'"
+  - name: females
+    fraction: 0.3
+    sql: "SELECT p.purposedData.petoriaCredit.header.ID[0].EntityKey FROM samplable p WHERE p.purposedData.petoriaCredit.header.ID[0].Gender = 'F'"
+  - name: unknown
+    fraction: 0.2
+    sql: "SELECT p.purposedData.petoriaCredit.header.ID[0].EntityKey FROM samplable p WHERE p.purposedData.petoriaCredit.header.ID[0].Gender = 'A'"

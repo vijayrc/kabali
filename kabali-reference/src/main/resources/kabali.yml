@@ -1,0 +1,21 @@
+job: GenderJob
+entityKey: purposedData.credit.header.ID[0].EntityKey
+scoreKey: "select p.final_score from sampler p"
+sampleSize: 1000
+expectedMean: 525
+expectedDeviation: 92
+expectedVariance: 8444
+expectedSkewness: 0.6
+tolerance: 0.1
+stratas:
+  - name: males
+    fraction: 0.2
+    sql: "purposedData.credit.header.ID[0].Gender = 'M'"
+  - name: females
+    fraction: 0.6
+    sql: "purposedData.credit.header.ID[0].Gender = 'F'"
+  - name: unknown
+    fraction: 0.2
+    sql: "purposedData.credit.header.ID[0].Gender = 'U'"
+
+
